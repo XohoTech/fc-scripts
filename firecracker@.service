@@ -1,0 +1,12 @@
+[Unit]
+Description=Firecracker VM for %I
+After=network.target
+
+[Service]
+ExecStart=/opt/fc/bin/start-jailer.sh %i
+Type=forking
+User=vmm
+Group=vmm
+
+[Install]
+WantedBy=multi-user.target
